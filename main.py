@@ -4567,10 +4567,6 @@ async def tip(ctx, member:discord.Member=None, amt=None, *,currency=None):
           amt = convertnotation(amt, 6)
           await ctx.send(f"{inventory[senderID][currency.lower()]['emoji']} <@{senderID}> sent <@{receiverID}> {amt} (~${dollaramt}) {inventory[senderID][currency.lower()]['symbol']}")
           savedb(inventory)
-          with open('dbs/tips.json') as f: 
-            fulltips = json.load(f) 
-            bot = str(client.user.id)
-            fulltips[bot] += round(amt, 4)
           embed = E(title=f"Transaction", description=f"New tip from <@{senderID}> ({senderID}) to <@{receiverID}> ({receiverID})\nAmount:{amt} {currency.lower()}(~${dollaramt})\nSenders Bal:{inventory[str(senderID)][currency.lower()]['amt']}\nRecievers Bal:{inventory[str(receiverID)][currency.lower()]['amt']}")
           await channel.send(embed=embed)
           
@@ -4595,6 +4591,7 @@ async def tip(ctx, member:discord.Member=None, amt=None, *,currency=None):
       await channel.send(embed=embed)
   else:
     Embed=E(title=f"{wrong} Currency Not Supported", description=f"{currency} is either not a currency we support, there is a typo in your message, or that currency does not exist.", color=red)
+    
   pending_trxs -= 1
 
 
