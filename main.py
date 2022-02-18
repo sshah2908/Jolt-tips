@@ -2,6 +2,7 @@
 
 
 from discord import *
+from webserver import keep_alive
 import decimal
 from discord import Embed as E 
 import discord
@@ -5846,5 +5847,5 @@ async def store(ctx):
 
 
 
-
+keep_alive()
 client.run(my_secret)
