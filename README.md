@@ -4,6 +4,7 @@
 ## **Overview**
 
 Jolt-tips is a Discord-based robot designed to facilitate the seamless transfer of cryptocurrencies among users while minimizing transaction fees through the integration of Web3 technology. By leveraging blockchain and smart contract capabilities, Jolt-Tips aims to streamline the process of sending and receiving cryptocurrencies within the Discord community, ultimately reducing financial losses associated with transaction fees.
+However, as a project created while I was still learning - the database was not secure and did not employ SQL
 
 ## **Features**
 
